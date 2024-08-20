@@ -1,0 +1,117 @@
+Sub CreateConsumerRightsPresentation()
+    Dim pptApp As Object
+    Dim pptPres As Object
+    Dim slide As Object
+    Dim slideIndex As Integer
+    Dim backgroundImagePath As String
+
+    ' Path to the background image related to consumer rights and geography
+    backgroundImagePath = "C:\path_to_your_image\background.jpg"
+
+    ' Create a new PowerPoint application and presentation
+    Set pptApp = CreateObject("PowerPoint.Application")
+    Set pptPres = pptApp.Presentations.Add
+    pptApp.Visible = True
+
+    ' Slide 1: Title Slide with Index
+    slideIndex = slideIndex + 1
+    Set slide = pptPres.Slides.Add(slideIndex, 1) ' 1 = ppLayoutTitle
+    slide.Shapes(1).TextFrame.TextRange.Text = "Consumer Rights"
+    
+    ' Adding index below the title
+    slide.Shapes.AddTextbox(msoTextOrientationHorizontal, 50, 150, 600, 400).TextFrame.TextRange.Text = "Index" & vbCrLf & _
+        "1. Introduction" & vbCrLf & _
+        "2. History of the Consumer Movement" & vbCrLf & _
+        "3. Significance of the Movement" & vbCrLf & _
+        "4. Consumer Rights under the Consumer Protection Act" & vbCrLf & _
+        "5. Consequences of Denied Rights" & vbCrLf & _
+        "6. Case Studies" & vbCrLf & _
+        "7. Conclusion" & vbCrLf & _
+        "8. References"
+
+    ' Applying background image to the title slide
+    slide.FollowMasterBackground = msoFalse
+    slide.Background.Fill.UserPicture (backgroundImagePath)
+    
+    ' Slide 2: Introduction
+    slideIndex = slideIndex + 1
+    Set slide = pptPres.Slides.Add(slideIndex, 2) ' 2 = ppLayoutText
+    slide.Shapes(1).TextFrame.TextRange.Text = "Introduction"
+    slide.Shapes(2).TextFrame.TextRange.Text = "Consumer rights are protections and entitlements granted to individuals in their role as buyers of goods and services. The consumer movement has played a vital role in ensuring that consumers are treated fairly in the marketplace."
+    slide.FollowMasterBackground = msoFalse
+    slide.Background.Fill.UserPicture (backgroundImagePath)
+
+    ' Slide 3: History of the Consumer Movement
+    slideIndex = slideIndex + 1
+    Set slide = pptPres.Slides.Add(slideIndex, 2) ' 2 = ppLayoutText
+    slide.Shapes(1).TextFrame.TextRange.Text = "History of the Consumer Movement"
+    slide.Shapes(2).TextFrame.TextRange.Text = "World: The consumer movement began in the early 20th century, with significant milestones such as the establishment of the Consumers International in 1960." & vbCrLf & _
+        "India: In India, the consumer movement gained momentum in the 1980s, leading to the enactment of the Consumer Protection Act in 1986."
+    slide.FollowMasterBackground = msoFalse
+    slide.Background.Fill.UserPicture (backgroundImagePath)
+
+    ' Slide 4: Significance of the Movement
+    slideIndex = slideIndex + 1
+    Set slide = pptPres.Slides.Add(slideIndex, 2) ' 2 = ppLayoutText
+    slide.Shapes(1).TextFrame.TextRange.Text = "Significance of the Movement"
+    slide.Shapes(2).TextFrame.TextRange.Text = "The consumer movement is crucial as it empowers individuals to stand up against exploitation, ensures fair trade practices, and holds businesses accountable. It has led to the establishment of legal frameworks that protect consumer rights globally."
+    slide.FollowMasterBackground = msoFalse
+    slide.Background.Fill.UserPicture (backgroundImagePath)
+
+    ' Slide 5: Consumer Rights under the Consumer Protection Act
+    slideIndex = slideIndex + 1
+    Set slide = pptPres.Slides.Add(slideIndex, 2) ' 2 = ppLayoutText
+    slide.Shapes(1).TextFrame.TextRange.Text = "Consumer Rights under the Consumer Protection Act"
+    slide.Shapes(2).TextFrame.TextRange.Text = "The Consumer Protection Act provides various rights, including:" & vbCrLf & _
+        "1. Right to Safety" & vbCrLf & _
+        "2. Right to Information" & vbCrLf & _
+        "3. Right to Choose" & vbCrLf & _
+        "4. Right to be Heard" & vbCrLf & _
+        "5. Right to Seek Redressal" & vbCrLf & _
+        "6. Right to Consumer Education"
+    slide.FollowMasterBackground = msoFalse
+    slide.Background.Fill.UserPicture (backgroundImagePath)
+
+    ' Slide 6: Consequences of Denied Rights
+    slideIndex = slideIndex + 1
+    Set slide = pptPres.Slides.Add(slideIndex, 2) ' 2 = ppLayoutText
+    slide.Shapes(1).TextFrame.TextRange.Text = "Consequences of Denied Rights"
+    slide.Shapes(2).TextFrame.TextRange.Text = "When consumer rights are denied, it can lead to unfair practices, exploitation, and harm to the consumer. It also diminishes trust in the marketplace and can result in legal action against businesses."
+    slide.FollowMasterBackground = msoFalse
+    slide.Background.Fill.UserPicture (backgroundImagePath)
+
+    ' Slide 7: Case Studies
+    slideIndex = slideIndex + 1
+    Set slide = pptPres.Slides.Add(slideIndex, 2) ' 2 = ppLayoutText
+    slide.Shapes(1).TextFrame.TextRange.Text = "Case Studies"
+    slide.Shapes(2).TextFrame.TextRange.Text = "Case Study 1: XYZ vs. ABC Corp - A case where a faulty product led to consumer injury and subsequent legal action." & vbCrLf & _
+        "Case Study 2: DEF vs. GHI Ltd - A case of false advertising that led to consumer compensation."
+    slide.FollowMasterBackground = msoFalse
+    slide.Background.Fill.UserPicture (backgroundImagePath)
+
+    ' Slide 8: Conclusion
+    slideIndex = slideIndex + 1
+    Set slide = pptPres.Slides.Add(slideIndex, 2) ' 2 = ppLayoutText
+    slide.Shapes(1).TextFrame.TextRange.Text = "Conclusion"
+    slide.Shapes(2).TextFrame.TextRange.Text = "The consumer movement has been instrumental in protecting the rights of individuals. Awareness of these rights and the legal frameworks in place is crucial for ensuring a fair marketplace."
+    slide.FollowMasterBackground = msoFalse
+    slide.Background.Fill.UserPicture (backgroundImagePath)
+
+    ' Slide 9: References/Bibliography
+    slideIndex = slideIndex + 1
+    Set slide = pptPres.Slides.Add(slideIndex, 2) ' 2 = ppLayoutText
+    slide.Shapes(1).TextFrame.TextRange.Text = "References/Bibliography"
+    slide.Shapes(2).TextFrame.TextRange.Text = "1. Consumer Protection Act, 1986" & vbCrLf & _
+        "2. Consumers International - www.consumersinternational.org" & vbCrLf & _
+        "3. XYZ Journal on Consumer Rights"
+    slide.FollowMasterBackground = msoFalse
+    slide.Background.Fill.UserPicture (backgroundImagePath)
+
+    ' End of presentation
+    MsgBox "Presentation Created Successfully!"
+
+    ' Cleanup
+    Set slide = Nothing
+    Set pptPres = Nothing
+    Set pptApp = Nothing
+End Sub
