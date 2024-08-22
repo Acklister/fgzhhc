@@ -1,0 +1,48 @@
+Sub CreateGoaPresentationWithUnicode()
+    Dim pptApp As Object
+    Dim pptPres As Object
+    Dim slide As Object
+    Dim slideIndex As Integer
+    Dim slideText As String
+    
+    ' Initialize PowerPoint
+    Set pptApp = CreateObject("PowerPoint.Application")
+    pptApp.Visible = True
+    Set pptPres = pptApp.Presentations.Add
+
+    ' Slide 1: Title Slide
+    slideIndex = 1
+    Set slide = pptPres.Slides.Add(slideIndex, ppLayoutTitle)
+    slide.Shapes(1).TextFrame.TextRange.Text = "गोवा: एक सुंदर पर्यटन स्थल"
+    slideText = "इस प्रस्तुति में, हम गोवा के प्रमुख पर्यटन स्थलों, सांस्कृतिक धरोहरों, प्राकृतिक सौंदर्य, और व्यंजनों पर प्रकाश डालेंगे। " & _
+                "गोवा, भारत का एक प्रमुख पर्यटन स्थल है, जो अपनी विविधता, प्राकृतिक सुंदरता, और समृद्ध सांस्कृतिक विरासत के कारण दुनिया भर के पर्यटकों को आकर्षित करता है।"
+    slide.Shapes(2).TextFrame.TextRange.Text = slideText
+    slide.FollowMasterBackground = msoFalse
+    slide.Background.Fill.UserPicture ("[Path to Background Image for Slide 1]")
+
+    ' Slide 2: Introduction to Goa
+    slideIndex = slideIndex + 1
+    Set slide = pptPres.Slides.Add(slideIndex, ppLayoutText)
+    slide.Shapes(1).TextFrame.TextRange.Text = "गोवा का परिचय"
+    slideText = "गोवा, पश्चिमी भारत के कोंकण क्षेत्र में स्थित है और अपने सुंदर समुद्र तटों, प्राचीन चर्चों, और समृद्ध सांस्कृतिक धरोहरों के लिए प्रसिद्ध है। " & _
+                "450 साल तक पुर्तगाली उपनिवेश के रूप में रहने के बाद, गोवा ने एक विशिष्ट सांस्कृतिक पहचान विकसित की है, जिसमें भारतीय और यूरोपीय प्रभावों का अनूठा मिश्रण है। " & _
+                "आज, गोवा एक लोकप्रिय पर्यटन स्थल है, जहां लाखों पर्यटक हर साल आते हैं। यहाँ की सांस्कृतिक विविधता, इतिहास, और जीवंत नाइटलाइफ इसे एक अनोखा और यादगार गंतव्य बनाते हैं।"
+    slide.Shapes(2).TextFrame.TextRange.Text = slideText
+    slide.FollowMasterBackground = msoFalse
+    slide.Background.Fill.UserPicture ("[Path to Background Image for Slide 2]")
+
+    ' Continue with more slides as needed...
+
+    ' Save the presentation
+    pptPres.SaveAs "C:\YourPath\Goa_Presentation.pptx"
+    pptPres.Close
+    pptApp.Quit
+
+    ' Cleanup
+    Set slide = Nothing
+    Set pptPres = Nothing
+    Set pptApp = Nothing
+
+    MsgBox "Presentation Created Successfully!"
+
+End Sub
